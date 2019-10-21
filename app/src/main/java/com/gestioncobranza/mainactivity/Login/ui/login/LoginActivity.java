@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.gestioncobranza.mainactivity.Login.R;
 import com.gestioncobranza.mainactivity.Login.ui.login.LoginViewModel;
 import com.gestioncobranza.mainactivity.Login.ui.login.LoginViewModelFactory;
+import com.gestioncobranza.mainactivity.R;
 
 public class LoginActivity extends AppCompatActivity {
 
