@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.gestioncobranza.mainactivity.Clientes.Model.ClienteRepository;
+import com.gestioncobranza.mainactivity.Clientes.Model.ClientesRepository;
 
 public class DbManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "gestioncobranza";
@@ -40,12 +40,12 @@ public class DbManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        createTable(ClienteRepository.ClienteEntry.TABLE_NAME, ClienteRepository.ClienteEntry.COLUMNAS,db);
+        createTable(ClientesRepository.ClienteEntry.TABLE_NAME, ClientesRepository.ClienteEntry.COLUMNAS,db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        deleteTables(db, ClienteRepository.ClienteEntry.TABLE_NAME);
+        deleteTables(db, ClientesRepository.ClienteEntry.TABLE_NAME);
         onCreate(db);
     }
 

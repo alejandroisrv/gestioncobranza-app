@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_clientes"
+        android:icon="@drawable/ic_clientes"
+        android:title="@string/title_clientes" />
+
+    <item
+        android:id="@+id/nav_jornadas"
+        android:icon="@drawable/ic_jornadas"
+        android:title="@string/title_jornadas" />
+
+    <item
+        android:id="@+id/nav_productos"
+        android:icon="@drawable/ic_productos"
+        android:title="@string/title_productos" />
+
+    <item
+        android:id="@+id/nav_facturas"
+        android:icon="@drawable/ic_facturas"
+        android:title="@string/title_facturas" />
+
+    <item
+        android:id="@+id/nav_rutas"
+        android:icon="@drawable/ic_rutas"
+        android:title="@string/title_rutas" />
+
+</menu>

@@ -1,78 +1,91 @@
 package com.gestioncobranza.mainactivity;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import com.gestioncobranza.mainactivity.Clientes.ClientesFragment;
+import com.gestioncobranza.mainactivity.Clientes.View.ClientesFragment;
+import com.gestioncobranza.mainactivity.Cobros.View.CobrosFragment;
+import com.gestioncobranza.mainactivity.Facturas.FacturasFragment;
 import com.gestioncobranza.mainactivity.Productos.ProductoFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
+import com.gestioncobranza.mainactivity.Rutas.View.RutasFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView mTextMessage;
+    private Fragment clientesFragment = new ClientesFragment();
+    private Fragment cobrosFragment = new CobrosFragment();
+    private Fragment facturasFragment = new FacturasFragment();
+    private Fragment rutasFragment = new RutasFragment();
+    private Fragment productosFragment  = new ProductoFragment();
+    Fragment active = clientesFragment;
+
+    final FragmentManager fm = getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        mTextMessage = findViewById(R.id.message);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        fm.beginTransaction().add(R.id.main_container, rutasFragment, "Rutas Fragment").hide(rutasFragment).commit();
+        fm.beginTransaction().add(R.id.main_container, cobrosFragment, "Cobros Fragment").hide(cobrosFragment).commit();
+        fm.beginTransaction().add(R.id.main_container, facturasFragment, "Facturas fragment").hide(facturasFragment).commit();
+        fm.beginTransaction().add(R.id.main_container, productosFragment, "Productos Fragment").hide(productosFragment).commit();
+        fm.beginTransaction().add(R.id.main_container,active, "Clientes Fragment").commit();
+        getSupportActionBar().setTitle("Clientes");
+
+    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+
+                case R.id.nav_clientes:
+                    fm.beginTransaction().hide(active).show(rutasFragment).commit();
+                    active = rutasFragment;
+                    getSupportActionBar().setTitle("Clientes");
+                    return true;
+
+                case R.id.nav_jornadas:
+                    fm.beginTransaction().hide(active).show(cobrosFragment).commit();
+                    getSupportActionBar().setTitle("Jornadas de cobros");
+                    active = cobrosFragment;
+                    return true;
+
+                case R.id.nav_facturas:
+                    fm.beginTransaction().hide(active).show(facturasFragment).commit();
+                    getSupportActionBar().setTitle("Facturas");
+                    active = facturasFragment;
+                    return true;
+
+                case R.id.nav_productos:
+                    fm.beginTransaction().hide(active).show(productosFragment).commit();
+                    active = productosFragment;
+                    getSupportActionBar().setTitle("Productos");
+                    return true;
+
+                case R.id.nav_rutas:
+                    fm.beginTransaction().hide(active).show(rutasFragment).commit();
+                    active = rutasFragment;
+                    getSupportActionBar().setTitle("Rutas");
+                    return true;
+
             }
-        });
-    }
-
-
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        private final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
-        private final Context mContext;
-        private List<Fragment> fragments;
-
-        public SectionsPagerAdapter(Context context, FragmentManager fm) {
-            super(fm);
-            mContext = context;
-            fragments = new ArrayList<>();
-            fragments.add( new ClientesFragment());
-            fragments.add( new ProductoFragment());
+            return false;
         }
+    };
 
-        @Override
-        public Fragment getItem(int position) {
-            return fragments.get(position);
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mContext.getResources().getString(TAB_TITLES[position]);
-        }
-
-        @Override
-        public int getCount() {
-            // Show 2 total pages.
-            return fragments.size();
-        }
-    }
 }

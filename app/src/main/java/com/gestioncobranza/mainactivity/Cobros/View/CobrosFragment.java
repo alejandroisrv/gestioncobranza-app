@@ -1,4 +1,4 @@
-package com.gestioncobranza.mainactivity.Rutas;
+package com.gestioncobranza.mainactivity.Cobros.View;
 
 
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import com.gestioncobranza.mainactivity.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RutasFragment extends Fragment {
+public class CobrosFragment extends Fragment {
 
 
-    public RutasFragment() {
+    public CobrosFragment() {
         // Required empty public constructor
     }
 
@@ -25,8 +25,8 @@ public class RutasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rutas, container, false);
+
+        return inflater.inflate(R.layout.fragment_cobros, container, false);
     }
 
 }

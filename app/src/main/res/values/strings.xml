@@ -18,4 +18,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="title_clientes">Clientes</string>
+    <string name="title_productos">Productos</string>
+    <string name="title_rutas">Rutas</string>
+    <string name="title_facturas">Facturas</string>
+    <string name="title_jornadas">Cobros</string>
 </resources>
