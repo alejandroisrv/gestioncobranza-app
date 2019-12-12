@@ -2,6 +2,7 @@ package com.gestioncobranza.mainactivity.Rutas.Presenter;
 
 import android.content.Context;
 
+import com.gestioncobranza.mainactivity.MainInterface;
 import com.gestioncobranza.mainactivity.Rutas.Model.Ruta;
 import com.gestioncobranza.mainactivity.Rutas.Model.RutasInteractorImpl;
 import com.gestioncobranza.mainactivity.Rutas.Rutas;
@@ -44,8 +45,8 @@ public class RutasPresenterImpl implements Rutas.presenter {
     }
 
     @Override
-    public void getDatosApi() {
-        rutasInteractor.getDatosApi();
+    public void getDatosApi(MainInterface.onResult onResult) {
+        rutasInteractor.getDatosApi(onResult);
     }
 
     @Override

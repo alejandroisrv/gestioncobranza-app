@@ -9,6 +9,9 @@ import com.gestioncobranza.mainactivity.Clientes.Clientes;
 import com.gestioncobranza.mainactivity.Clientes.Clientes.view;
 import com.gestioncobranza.mainactivity.Clientes.Model.Cliente;
 import com.gestioncobranza.mainactivity.R;
+import com.gestioncobranza.mainactivity.Rutas.Model.Ruta;
+
+import java.util.ArrayList;
 
 public class AddClienteActivity extends AppCompatActivity implements view {
 
@@ -19,8 +22,18 @@ public class AddClienteActivity extends AppCompatActivity implements view {
     }
 
     @Override
+    public void getClientesByRutas(int id, String query) {
+
+    }
+
+    @Override
     public void addCliente(Cliente cliente) {
 
+
+    }
+
+    @Override
+    public void showClientes(ArrayList<Ruta> rutas) {
 
     }
 

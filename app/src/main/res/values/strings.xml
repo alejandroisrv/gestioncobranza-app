@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MainActivity</string>
+    <string name="app_name">Gestion Cobranza</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -12,7 +12,7 @@
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -23,4 +23,16 @@
     <string name="title_rutas">Rutas</string>
     <string name="title_facturas">Facturas</string>
     <string name="title_jornadas">Cobros</string>
+    <string name="hint_username">Usuario</string>
+    <string name="hint_password">Password</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="nav_header_desc">Nombre usurio</string>
+    <string name="nav_header_title">Email</string>
+    <string name="nav_header_subtitle">Name</string>
+    <string name="menu_logout">Cerrar sesión</string>
+    <string name="menu_sicronizar">Sincronizar data</string>
+    <string name="list_item_load_more">MÁS</string>
+    <string name="msj_vacio">No hay datos para mostrar.</string>
+    <string name="label_cedula">Cédula</string>
+    <string name="label_telefono">Teléfono</string>
 </resources>

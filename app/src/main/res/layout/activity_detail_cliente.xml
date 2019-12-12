@@ -4,6 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Clientes.View.DetailClienteActivity">
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        tools:layout_editor_absoluteY="66dp">
+
+        <TextView
+            android:id="@+id/cliente_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Alejandro Cliente"
+            android:textAlignment="center"
+            android:textColor="@color/colorTitulo"
+            android:textSize="@dimen/sizeTitulo"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cliente_desde"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Alejandro Cliente"
+            android:textAlignment="center"
+            android:textColor="@color/colorSubtitulo"
+            android:textSize="@dimen/sizeMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cliente_nombre" />
+
+        <TextView
+            android:id="@+id/cliente_cedula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_cedula"
+            android:textColor="@color/colorTitulo"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="C.I 2237213"
+            android:textColor="@color/colorTitulo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cliente_nombre" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cliente_cedula"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/label_direccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_cedula"
+                android:textColor="@color/colorTitulo"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginRight="30dp"
+                android:layout_toRightOf="@id/label_direccion"
+                android:text="@string/label_telefono"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorTitulo"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

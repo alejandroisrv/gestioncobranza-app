@@ -2,6 +2,7 @@ package com.gestioncobranza.mainactivity.Clientes.Model;
 
 import com.gestioncobranza.mainactivity.Clientes.Clientes;
 import com.gestioncobranza.mainactivity.Clientes.Presenter.ClientesPresenter;
+import com.gestioncobranza.mainactivity.MainInterface;
 
 public class ClientesInteractor implements Clientes.interactor {
 
@@ -18,23 +19,28 @@ public class ClientesInteractor implements Clientes.interactor {
     }
 
     @Override
-    public void getDatos() {
-
+    public void getClientesByRutas(int id, String query) {
+        clientesRepository.getClientesByRutas(id, query);
     }
 
     @Override
-    public void getDatos(String query) {
+    public void getDatos() {
+        clientesRepository.getDatos();
+    }
 
+    @Override
+    public void getDatos(String query   ) {
+        clientesRepository.getDatos(query);
     }
 
     @Override
     public void getItem(int id) {
-
+        clientesRepository.getItem(id);
     }
 
     @Override
-    public void getDatosApi() {
-
+    public void getDatosApi(MainInterface.onResult onResult) {
+        clientesRepository.getDatosApi(onResult);
     }
 
     @Override

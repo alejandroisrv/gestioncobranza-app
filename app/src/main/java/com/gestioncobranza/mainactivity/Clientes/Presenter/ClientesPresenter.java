@@ -5,6 +5,10 @@ import android.content.Context;
 import com.gestioncobranza.mainactivity.Clientes.Clientes;
 import com.gestioncobranza.mainactivity.Clientes.Model.Cliente;
 import com.gestioncobranza.mainactivity.Clientes.Model.ClientesInteractor;
+import com.gestioncobranza.mainactivity.MainInterface;
+import com.gestioncobranza.mainactivity.Rutas.Model.Ruta;
+
+import java.util.ArrayList;
 
 public class ClientesPresenter implements Clientes.presenter {
     private final Clientes.view clientesView;
@@ -21,19 +25,28 @@ public class ClientesPresenter implements Clientes.presenter {
     }
 
     @Override
+    public void showClientes(ArrayList<Ruta> rutas) {
+        clientesView.showClientes(rutas);
+    }
+
+    @Override
+    public void getClientesByRutas(int id, String query) {
+        clientesInteractor.getClientesByRutas(id,query);
+
+    }
+
+    @Override
     public Context getView() {
         return clientesView.getContext();
     }
 
     @Override
     public void getDatos() {
-
+        clientesInteractor.getDatos();
     }
 
     @Override
-    public void getDatos(String query) {
-
-    }
+    public void getDatos(String query) { clientesInteractor.getDatos(query);}
 
     @Override
     public void getItem(int id) {
@@ -41,8 +54,8 @@ public class ClientesPresenter implements Clientes.presenter {
     }
 
     @Override
-    public void getDatosApi() {
-
+    public void getDatosApi(MainInterface.onResult onResult) {
+        clientesInteractor.getDatosApi(onResult);
     }
 
     @Override

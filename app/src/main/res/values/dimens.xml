@@ -5,4 +5,10 @@
     <dimen name="appbar_padding">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="edittext_textsize_login">14sp</dimen>
+    <dimen name="nav_header_vertical_spacing">20dp</dimen>
+    <dimen name="sizeTitulo">16sp</dimen>
+    <dimen name="sizeSubtitle">14sp</dimen>
+    <dimen name="list_label_categoria_height">40dp</dimen>
+    <dimen name="sizeMedium">18sp</dimen>
 </resources>

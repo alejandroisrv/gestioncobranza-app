@@ -1,5 +1,6 @@
 package com.gestioncobranza.mainactivity.Rutas.Model;
 
+import com.gestioncobranza.mainactivity.MainInterface;
 import com.gestioncobranza.mainactivity.Rutas.Rutas;
 
 public class RutasInteractorImpl implements Rutas.interactor{
@@ -28,8 +29,8 @@ public class RutasInteractorImpl implements Rutas.interactor{
     }
 
     @Override
-    public void getDatosApi() {
-        rutasRepository.getDatosApi();
+    public void getDatosApi(MainInterface.onResult onResult) {
+        rutasRepository.getDatosApi(onResult);
     }
 
     @Override
